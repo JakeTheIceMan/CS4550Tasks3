@@ -1,0 +1,14 @@
+/* This file is for your main application css. */
+
+$body-bg: #BBB; // With scss, Bootstrap lets us override colors and stuff.
+@import "~bootstrap/scss/bootstrap";
+
+th {
+  padding-left: ($spacer * .5);
+  padding-right: ($spacer * .5);
+}
+td {
+  padding-left: ($spacer * .5);
+  padding-right: ($spacer * .5);
+}
+

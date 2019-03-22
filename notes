@@ -1,0 +1,16 @@
+worker names just disappeared?
+  how to properly preload w/ SPA
+cant do "new" things
+things about edits
+Minor: no warning before deletions, is this a problem?
+Minor: chosing user by id, is that fine?
+deployment common issues
+walkthrough deployment for notes
+HW1 grade
+
+
+
+do things with conf/prod.exs
+put passwords in conf/prod.secret.exs
+ecto.create (after deploy)
+ecto.migrate (after deploy)
