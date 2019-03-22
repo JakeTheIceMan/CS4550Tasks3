@@ -2,11 +2,14 @@ defmodule Tasks3.Users do
   @moduledoc """
   The Users context.
   """
+  import Comeonin
 
   import Ecto.Query, warn: false
   alias Tasks3.Repo
 
   alias Tasks3.Users.User
+  alias Comeonin
+
 
   @doc """
   Returns the list of users.
@@ -20,6 +23,13 @@ defmodule Tasks3.Users do
   def list_users do
     Repo.all(User)
   end
+
+  def authenticate_user(email, password) do
+    Repo.get_by(User, email: email)
+    |> Comeonin.Argon2.check_pass(password)
+    |> IO.puts()
+  end
+
 
   @doc """
   Gets a single user.

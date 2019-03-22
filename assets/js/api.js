@@ -18,13 +18,13 @@ class OurServer {
         type: 'TASK_LIST',
         data: resp.data
       });
+      console.log(resp.data);
     });
   }
 
   make_user() {
     let state = store.getState();
     let data  = state.registration_form;
-    console.log("making new user", state);
     this.make_post("/api/users", {user: data},
     (resp) => {
       this.get_users();

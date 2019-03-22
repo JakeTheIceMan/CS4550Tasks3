@@ -1,3 +1,4 @@
+
 defmodule Tasks3Web.Endpoint do
   use Phoenix.Endpoint, otp_app: :tasks3
 
@@ -43,4 +44,13 @@ defmodule Tasks3Web.Endpoint do
     signing_salt: "F73S7sZO"
 
   plug Tasks3Web.Router
+  
+  def init(_key,config) do
+	if config[:load_from_system_env] do
+		port = System.get_env("PORT") || raise "expected port env to be set"
+		{:ok, Keyword.put(config, :http, [:inet6, port: port])}
+	else
+		{:ok, config}
+	end
+ end
 end

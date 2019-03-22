@@ -22,7 +22,7 @@ export default connect(({users}) => { return {users};})((props) => {
           <tr><td><button className="btn btn-primary m-1" onClick={() => api.make_user()}>Register</button></td>
           <td><input type="text" className="form-control m1" name="email" placeholder="Email" onChange={updateReg} /></td>
           <td><input type="text" className="form-control m1" name="name" placeholder="Name" onChange={updateReg} /></td>
-          <td><input type="text" className="form-control m1" name="password_hash" placeholder="Password" onChange={updateReg} /></td></tr>
+          <td><input type="password" className="form-control m1" name="password_hash" placeholder="Password" onChange={updateReg} /></td></tr>
           <tr>
             <th>ID</th>
             <th>Email</th>

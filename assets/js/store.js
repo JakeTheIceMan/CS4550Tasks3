@@ -30,7 +30,7 @@ function session(state = null, action) {
   }
 }
 
-let task_form0 = {name: "", desc: "", completed: false, duration: 0, worker_id: 0};
+let task_form0 = {name: "", desc: "", completed: false, duration: 0, worker_id: 0, worker: ""};
 function make_task_form(state = task_form0, action) {
   switch (action.type) {
     case 'UPDATE_NEW_TASK_FORM':

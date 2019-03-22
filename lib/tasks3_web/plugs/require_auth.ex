@@ -5,9 +5,9 @@ defmodule Tasks3Web.Plugs.RequireAuth do
 
   def call(conn, _args) do
     token = get_req_header(conn, "x-auth")
-    case Phoenix.Token.verify(TaskTrackerSpaWeb.Endpoint, "user_id", token, max_age: 128000) do
+    case Phoenix.Token.verify(Tasks3Web.Endpoint, "user_id", token, max_age: 128000) do
       {:ok, user_id} ->
-        assign(conn, :current_user, TaskTrackerSpa.Users.get_user!(user_id))
+        assign(conn, :current_user, Tasks3.Users.get_user!(user_id))
       {:error, err} ->
         conn
         |> put_resp_header("content-type", "application/json; charset=UTF-8")

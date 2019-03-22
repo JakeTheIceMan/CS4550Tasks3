@@ -20,10 +20,12 @@ defmodule Tasks3Web.UserController do
     end
   end
 
+
   def show(conn, %{"id" => id}) do
     user = Users.get_user!(id)
     render(conn, "show.json", user: user)
   end
+
 
   def update(conn, %{"id" => id, "user" => user_params}) do
     user = Users.get_user!(id)
@@ -33,6 +35,7 @@ defmodule Tasks3Web.UserController do
     end
   end
 
+
   def delete(conn, %{"id" => id}) do
     user = Users.get_user!(id)
 
@@ -40,4 +43,5 @@ defmodule Tasks3Web.UserController do
       send_resp(conn, :no_content, "")
     end
   end
+
 end

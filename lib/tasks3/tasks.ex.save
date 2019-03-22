@@ -19,8 +19,7 @@ defmodule Tasks3.Tasks do
   """
   def list_tasks do
     Repo.all(Task)
-    |>Repo.preload(:worker)
-    |> IO.inspect()
+    |>Repo.preload(:worker
   end
 
   @doc """
